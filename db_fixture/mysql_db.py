@@ -70,8 +70,8 @@ class DB:
 if __name__ == '__main__':
 
     db = DB()
-    table_name = "yb_category_primary"
-    data = {'category_name':'一级类目1'}
+    table_name = "yb_repair"
+    data = {'repair_no':'YB1000025349453'}
 #    table_name2 = "sign_guest"
 #    data2 = {'realname':'alen','phone':12312341234,'email':'alen@mail.com','sign':0,'event_id':1}
 #    db.insert(table_name, data)

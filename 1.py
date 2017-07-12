@@ -4,7 +4,7 @@ import requests
 class test():
 
     def __init__(self):
-        self.base_url = "http://eims.sit.datoubao.com/eims/login/loginService"
+        self.base_url = "http://yanbao.admin.datoubao.com/eims/login/loginService"
 
     def test_add_event_all_null(self):
             ''' 所有参数为空 '''

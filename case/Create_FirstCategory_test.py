@@ -1,13 +1,10 @@
 import unittest
 import requests
 import os, sys,time
+from db_fixture.mysql_db import DB
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 sys.path.insert(0, parentdir)
 sys.path.append("..")
-
-from db_fixture.mysql_db import DB
-
 
 class eims_login(unittest.TestCase):
     ''' 后台创建一级类目  接口 '''
@@ -30,7 +27,7 @@ class eims_login(unittest.TestCase):
         self.assertEqual(self.result['result'], False)
         self.assertEqual(self.result['resultObject'], None)
         self.assertEqual(self.result['success'], False)
-        time.sleep(3)
+        time.sleep(2)
         print(r.json())
 
     def test_add_Category_success(self):

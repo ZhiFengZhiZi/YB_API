@@ -1,34 +1,200 @@
-import sys
+import sys,time
 sys.path.append('../db_fixture')
-from .mysql_db import DB
-
-
-# create data
-datas = {
-    'sign_event':[
-        {'id':1,'name':'红米Pro发布会','`limit`':2000,'status':1,'address':'北京会展中心','start_time':'2017-08-20 14:00:00'},
-        {'id':2,'name':'可参加人数为0','`limit`':0,'status':1,'address':'北京会展中心','start_time':'2017-08-20 14:00:00'},
-        {'id':3,'name':'当前状态为0关闭','`limit`':2000,'status':0,'address':'北京会展中心','start_time':'2017-08-20 14:00:00'},
-        {'id':4,'name':'发布会已结束','`limit`':2000,'status':1,'address':'北京会展中心','start_time':'2001-08-20 14:00:00'},\
-        {'id':5,'name':'小米5发布会','`limit`':2000,'status':1,'address':'北京国家会议中心','start_time':'2017-08-20 14:00:00'},
-    ],
-    'sign_guest':[
-        {'id':1,'realname':'alen','phone':13511001100,'email':'alen@mail.com','sign':0,'event_id':1},
-        {'id':2,'realname':'has sign','phone':13511001101,'email':'sign@mail.com','sign':1,'event_id':1},
-        {'id':3,'realname':'tom','phone':13511001102,'email':'tom@mail.com','sign':0,'event_id':5},
-    ],
-}
-
+from db_fixture.mysql_db import DB
+from common import urlbase
 
 # Inster table datas
-def init_data():
+def ua_emp_insert(count):
+    table = 'ua_employee'
+    nowtime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    try:
+
+
+        if  count==1:
+            table_name = table
+            emp = {'EMP_NO':'99991','EMP_CNAME': '测试账号β', 'EMP_NAME': 'ZHANGHAO2', 'PASSWORD': '508df4cb2f4d8f80519256258cfb975f',
+                'EMP_STATUS': '1', 'CELL_PHONE': '123456','UPDATE_TIME':nowtime}
+
+            db = DB()
+            db.insert(table_name=table_name, table_data=emp)
+            db.close()
+
+        elif  count==2:
+            table_name = table
+            emp = {'EMP_NO':'99991','EMP_CNAME': '测试账号β', 'EMP_NAME': 'ZHANGHAO2', 'PASSWORD': '508df4cb2f4d8f80519256258cfb975f',
+               'EMP_STATUS': '1', 'CELL_PHONE': '123456','UPDATE_TIME':nowtime}
+
+
+
+            emp2 = {'EMP_NO':'99992','EMP_CNAME': '测试账号α', 'EMP_NAME': 'ZHANGHAO1', 'PASSWORD': 'e10adc3949ba59abbe56e057f20f883e',
+           'EMP_STATUS': '1', 'CELL_PHONE': '123456','UPDATE_TIME':nowtime}
+            db = DB()
+            db.insert(table_name=table_name, table_data=emp)
+            db.insert(table_name=table_name, table_data=emp2)
+            db.close()
+    except Exception as err:
+        return  err
+    finally:
+        return "good"
+
+def ua_emp_search(value,type):
+    semp = {'EMP_CNAME': '测试账号α'}
+    semp2 = {'EMP_CNAME': '测试账号β'}
+    table_name = "ua_employee"
+
+
+    if   type=='α':
+        db = DB()
+
+        s = db.select(table_value=value, table_name=table_name, table_data=semp)
+        db.close()
+    elif type == 'β':
+        db = DB()
+
+        s = db.select(table_value=value, table_name=table_name, table_data=semp2)
+        db.close()
+    return s
+
+def ua_emp_delete(type):
+    table_name = "ua_employee"
+    data = {'EMP_CNAME': '测试账号α'}
+    data2 = {'EMP_CNAME': '测试账号β'}
+
+    if type == 'α':
+        db = DB()
+        db.clear(table_name=table_name,table_data=data)
+        db.close()
+
+    elif type == 'β':
+        db = DB()
+        db.clear(table_name=table_name, table_data=data2)
+        db.close()
+
+def ua_role_insert(count):
+    table_name = "ua_role"
+    nowtime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+    if count==1 :
+        role = {'ROLE_CODE': 'ROLE01', 'ROLE_NAME': '测试角色α', 'PINYIN': 'AERFA', 'STATUS': '1','UPDATE_TIME':nowtime}
+        db = DB()
+        db.insert(table_name=table_name, table_data=role)
+        db.close()
+
+
+    elif count==2 :
+        role = {'ROLE_CODE': 'ROLE01', 'ROLE_NAME': '测试角色α', 'PINYIN': 'AERFA',
+                'STATUS': '1','UPDATE_TIME':nowtime}
+        role2 = {'ROLE_CODE': 'ROLE02', 'ROLE_NAME': '测试角色β', 'PINYIN': 'BETA',
+                 'STATUS': '1','UPDATE_TIME':nowtime}
+        db = DB()
+        db.insert(table_name=table_name, table_data=role)
+        db.insert(table_name=table_name, table_data=role2)
+        db.close()
+
+def ua_role_search(value, type):
+    semp = {'ROLE_NAME': '测试角色α'}
+    semp2 = {'ROLE_NAME': '测试角色β'}
+    table_name = "ua_role"
+
+    if type == 'α':
+            db = DB()
+
+            s = db.select(table_value=value, table_name=table_name, table_data=semp)
+            db.close()
+    if type == 'β':
+            db = DB()
+
+            s = db.select(table_value=value, table_name=table_name, table_data=semp2)
+            db.close()
+
+    return s
+
+def ua_role_delete(type):
+    data = {'ROLE_NAME': '测试角色α'}
+    data2 = {'ROLE_NAME': '测试角色β'}
+    table_name = "ua_role"
+
+    if type == 'α':
+        db = DB()
+        db.clear(table_name=table_name,table_data=data)
+        db.close()
+
+    elif type == 'β':
+        db = DB()
+        db.clear(table_name=table_name, table_data=data2)
+        db.close()
+
+def ua_res_insert(count):
+    table_name = "ua_resource"
+
+    if count == 1:
+            role = {'RES_NAME':'测试管理α','SYS_ID': 1, 'RES_TYPE': 0,'RES_LEVEL': '1'}
+            db = DB()
+            db.insert(table_name=table_name, table_data=role)
+            db.close()
+
+    if count == 2:
+            role = {'RES_NAME':'测试管理α','SYS_ID': 1, 'RES_TYPE': 0,'RES_LEVEL': '1'}
+            role2 = {'RES_NAME':'测试管理β','SYS_ID': 1, 'RES_TYPE': 0,'RES_LEVEL': '1'}
+            db = DB()
+            db.insert(table_name=table_name, table_data=role)
+            db.insert(table_name=table_name, table_data=role2)
+            db.close()
+
+def ua_res_search(value, type):
+        semp = {'RES_NAME': '测试管理α'}
+        semp2 = {'RES_NAME': '测试管理β'}
+        table_name = "ua_resource"
+
+        if type == 'α':
+            db = DB()
+
+            s = db.select(table_value=value, table_name=table_name, table_data=semp)
+            db.close()
+        if type == 'β':
+            db = DB()
+
+            s = db.select(table_value=value, table_name=table_name, table_data=semp2)
+            db.close()
+
+        return s
+
+def ua_res_delete(type):
+    data = {'RES_NAME': '测试管理α'}
+
+    data2 = {'RES_NAME': '测试管理β'}
+    table_name = "ua_resource"
+
+    if type == 'α':
+        db = DB()
+        db.clear(table_name=table_name,table_data=data)
+        db.close()
+
+    elif type == 'β':
+        db = DB()
+        db.clear(table_name=table_name, table_data=data2)
+        db.close()
+
+def ua_roleemp_insert(empid,roleid):
+    table_name = "ua_role_emp"
+    nowtime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+
+    data = {'EMP_ID':empid,'ROLE_ID':roleid,'STATUS':1,'UPDATE_TIME':nowtime}
     db = DB()
-    for table, data in datas.items():
-        db.clear(table)
-        for d in data:
-            db.insert(table, d)
+    db.insert(table_name=table_name, table_data=data)
+    db.close()
+
+def ua_roleemp_delete(EMP_ID):
+    data = {'EMP_ID':EMP_ID}
+
+    table_name = "ua_role_emp"
+
+    db = DB()
+    db.clear(table_name=table_name, table_data=data)
     db.close()
 
 
 if __name__ == '__main__':
-    init_data()
+
+    ua_role_insert(count=1)
+    s=ua_role_search(value='id', type='α')
+    print(s)

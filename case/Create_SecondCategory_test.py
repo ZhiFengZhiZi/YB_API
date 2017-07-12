@@ -1,6 +1,7 @@
 import unittest
 import requests
 import os, sys,time
+from common import urlbase
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parentdir)
 
@@ -11,7 +12,7 @@ class Create_SecondCategory(unittest.TestCase):
 
 
     def setUp(self):
-        self.base_url = "http://eims.sit.datoubao.com/eims/category/createSecondCategory"
+        self.base_url = urlbase.sit()+"category/createSecondCategory"
         self.table_name = "yb_category_secondary"
         self.data = {'category_name': '测试二级1'}
         db=DB()
@@ -24,12 +25,11 @@ class Create_SecondCategory(unittest.TestCase):
         payload = {'categoryName':'','parentId':''}
         r = requests.post(self.base_url, data=payload)
         self.result = r.json()
-
         self.assertEqual(self.result['message'], None)
         self.assertEqual(self.result['result'], False)
         self.assertEqual(self.result['resultObject'], None)
         self.assertEqual(self.result['success'], False)
-        time.sleep(3)
+
 
 
 
@@ -43,7 +43,7 @@ class Create_SecondCategory(unittest.TestCase):
         self.assertEqual(self.result['result'], False)
         self.assertEqual(self.result['resultObject'], None)
         self.assertEqual(self.result['success'], False)
-        time.sleep(3)
+
 
 
     def test_add_Category_success(self):
@@ -60,7 +60,7 @@ class Create_SecondCategory(unittest.TestCase):
     def tearDown(self):
             self.table_name = "yb_category_secondary"
             self.data = {'category_name': '接口测试二级'}
-            self.data2 = {'category_name': ''}
+            self.data2 = {'category_name': '测试二级1'}
             db = DB()
             db.clear(table_name=self.table_name,table_data=self.data)
             db.clear(table_name=self.table_name, table_data=self.data2)

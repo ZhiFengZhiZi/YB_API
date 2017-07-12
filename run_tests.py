@@ -1,7 +1,7 @@
 import sys
 import time
 import unittest
-sys.path.append('./case')
+sys.path.append('./repair')
 sys.path.append('./db_fixture')
 
 import HTMLTestRunner
@@ -13,7 +13,7 @@ import HTMLTestRunner
 class report():
 
     def __init__(self):
-        self.test_dir = './case'
+        self.test_dir = './repair'
         self.discover = unittest.defaultTestLoader.discover(self.test_dir, pattern='*_test.py',top_level_dir=None)
 
 
@@ -32,6 +32,4 @@ class report():
 
 if __name__ == "__main__":
 #    test_data.init_data() # 初始化接口测试数据
-
-
     report().run()

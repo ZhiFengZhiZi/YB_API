@@ -1,7 +1,7 @@
 import unittest
 import requests
 import os, sys,time
-
+from db_fixture.mysql_db import DB
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parentdir)
 
@@ -88,9 +88,15 @@ class Create_ThirdCategory(unittest.TestCase):
         self.assertEqual(self.result['success'], True)
 
 
-
     def tearDown(self):
-        print(str(self.result))
+            self.table_name = "yb_category_thirdly"
+            self.data = {'category_name': '三级类目'}
+            self.data2 = {'category_name': '三级类目no'}
+            db = DB()
+            db.clear(table_name=self.table_name,table_data=self.data)
+            db.clear(table_name=self.table_name, table_data=self.data2)
+            db.close()
+            print(str(self.result))
 
 if __name__=='__main__':
 

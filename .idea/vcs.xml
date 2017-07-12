@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="D:\YanbaoRequests\PyDemo" vcs="Git" />
     <mapping directory="D:\YanbaoRequests\pyrequest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>

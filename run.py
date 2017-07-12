@@ -7,7 +7,7 @@ import time
 def creatsuite():
     testunit = unittest.TestSuite()
     # 定义测试文件查找的目录
-    test_dir = 'F:\\python\\selemium\\program'
+    test_dir = 'E:\\延保\\延保svn\\YB_API\\case\\repair'
     # 定义 discover 方法的参数
     discover = unittest.defaultTestLoader.discover(test_dir,
                                                    pattern='test_*.py',
@@ -23,12 +23,12 @@ def creatsuite():
 alltestnames = creatsuite()
 if __name__ == '__main__':
     now = time.strftime("%Y-%m-%d %H_%M_%S")
-    filename = 'F:\\python\\selemium\\program\\' + now + 'result.html'
-    fp = file(filename, 'wb')
+    filename = 'D:\\python\\selenium\\program\\' + now + 'result.html'
+    fp = open(filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(
         stream=fp,
-        title=u'测试报告',
-        description=u'用例的执行情况')
+        title='测试报告',
+        description='用例的执行情况')
 
     runner.run(alltestnames)
     fp.close()
