@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e80a6c34-8cc3-4d9d-a2f0-23a00e453d8c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/case/UploadPic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-03 21_12_15_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-04 12_14_04_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-04 17_10_06_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-08 14_24_01_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-08 14_27_49_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-09 19_21_18_result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/report/2017-05-18 20_15_24_result.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/YanbaoRequests.iml" afterPath="$PROJECT_DIR$/.idea/YanbaoRequests.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1.py" afterPath="$PROJECT_DIR$/1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/Create_FirstCategory_test.py" afterPath="$PROJECT_DIR$/case/Create_FirstCategory_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/Create_SecondCategory_test.py" afterPath="$PROJECT_DIR$/case/Create_SecondCategory_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/Create_ThirdCategory_test.py" afterPath="$PROJECT_DIR$/case/Create_ThirdCategory_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_config.ini" afterPath="$PROJECT_DIR$/db_config.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_fixture/mysql_db.py" afterPath="$PROJECT_DIR$/db_fixture/mysql_db.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_fixture/test_data.py" afterPath="$PROJECT_DIR$/db_fixture/test_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_tests.py" afterPath="$PROJECT_DIR$/run_tests.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -155,8 +136,8 @@
       <file leaf-file-name="2017-07-10 13_44_19_result.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/report/2017-07-10 13_44_19_result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state relative-caret-position="324">
+              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -314,6 +295,20 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="YB_API">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="YB_API">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -651,6 +646,14 @@
       <option name="presentableId" value="Default" />
       <updated>1493778173540</updated>
     </task>
+    <task id="LOCAL-00001" summary="7.12">
+      <created>1499829469600</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1499829469600</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -714,6 +717,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="7.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="7.12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1063,8 +1070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/report/2017-07-10 13_44_19_result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        <state relative-caret-position="324">
+          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding />
         </state>
       </provider>
